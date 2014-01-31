@@ -70,9 +70,9 @@ bool isSingleDoublePrime (int number)
 bool isCubeFind (int number)
 {
 
-	int cube = int(cbrt(number));
+	int cube = int(cbrt(double(number)));
 	//int cubethree = int(cbrt(number + 3));
-	if ((cube*cube*cube) == number){
+	if ((cube*cube*cube) == number || number == (cube+cube+cube + 3)){
 		return true;
 	}
 	else{
@@ -81,7 +81,8 @@ bool isCubeFind (int number)
 };
 bool isTriangular (int number)
 {
-	int tri = int(sqrt(8 * number + 1));
+
+	int tri = int(sqrt(8 * double(number + 1)));
 
 	if ((tri*tri) == (8 * number + 1)){
 		return 1;
